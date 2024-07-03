@@ -49,6 +49,13 @@ function App() {
 
   }
 
+  const onReset = () => {
+    setValA1(initialVal)
+    setValA2(initialVal)
+    setValB1(initialVal)
+    setValB2(initialVal)
+  }
+
   return (
     <>
       <div> コスパ計算 </div>
@@ -88,6 +95,9 @@ function App() {
       <>
         {result ? <p>{result}</p> : null}
       </>
+      <div>
+        <button onClick={onReset}> Reset </button>
+      </div>
     </>
   )
 }
