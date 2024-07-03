@@ -4,11 +4,14 @@ import './App.css'
 
 function App() {
   const initialVal = "0"
+  const initialString = ""
   const [valA1, setValA1] = useState(initialVal)
   const [valA2, setValA2] = useState(initialVal)
   const [valB1, setValB1] = useState(initialVal)
   const [valB2, setValB2] = useState(initialVal)
   const [result, setResult] = useState("")
+  const [qualityA, setQualityA] = useState("")
+  const [qualityB, setQualityB] = useState("")
 
   const handleChangeText = (setter: React.Dispatch<React.SetStateAction<string>>) => (e: React.ChangeEvent<HTMLInputElement>) => {
     let text = e.target.value
@@ -36,12 +39,15 @@ function App() {
       return
     }
 
-    const qualityA = a1 / a2
-    const qualityB = b1 / b2
+    const qualityAValue = a1 / a2
+    const qualityBValue = b1 / b2
 
-    if (qualityA > qualityB) {
+    setQualityA(qualityAValue.toFixed(2));
+    setQualityB(qualityBValue.toFixed(2));
+
+    if (qualityAValue > qualityBValue) {
       setResult("Aの方がコスト効率が良いです。")
-    } else if (qualityA < qualityB) {
+    } else if (qualityAValue < qualityBValue) {
       setResult("Bの方がコスト効率が良いです。")
     } else {
       setResult("A と B はどちらも費用対効果は同じです。")
@@ -54,6 +60,7 @@ function App() {
     setValA2(initialVal)
     setValB1(initialVal)
     setValB2(initialVal)
+    setResult(initialString)
   }
 
   return (
@@ -93,7 +100,12 @@ function App() {
         <button onClick={onResult}> Result </button>
       </div>
       <>
-        {result ? <p>{result}</p> : null}
+        {result && (
+          <div>
+            <p>{result}</p>
+            <p>1円あたりの価値 - A: {qualityA} 単位/円, B: {qualityB} 単位/円</p>
+          </div>
+        )}
       </>
       <div>
         <button onClick={onReset}> Reset </button>
