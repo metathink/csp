@@ -12,8 +12,14 @@ export default ({ val, setResult }: {
     setResult: React.Dispatch<React.SetStateAction<{
         cost: string
         quality: {
-            A: string
-            B: string
+            A: {
+                qualityValue: string
+                costPerUnit: string
+            }
+            B: {
+                qualityValue: string
+                costPerUnit: string
+            }
         }
     }>>
 }) => {
@@ -29,7 +35,16 @@ export default ({ val, setResult }: {
         if (isNaN(a1) || isNaN(a2) || isNaN(a3) || isNaN(b1) || isNaN(b2) || isNaN(b3) || a1 <= 0 || a2 <= 0 || a3 <= 0 || b1 <= 0 || b2 <= 0 || b3 <= 0) {
             setResult({
                 cost: "入力が無効です。有効な数値を入力してください。価格が 0 より大きく、数量が 1 以上であることを確認してください。",
-                quality: { A: "", B: "" }
+                quality: {
+                    A: {
+                        qualityValue: "",
+                        costPerUnit: ""
+                    },
+                    B: {
+                        qualityValue: "",
+                        costPerUnit: ""
+                    }
+                }
             })
             return
         }
@@ -39,22 +54,27 @@ export default ({ val, setResult }: {
         const costPerUnitA = a2 / a3
         const costPerUnitB = b2 / b3
 
-
         let resultMessage = ""
 
-        if (qualityAValue  > qualityBValue ) {
-            resultMessage = `Aの方がコスト効率が良いです。Aの1個当たりの費用は ${costPerUnitA.toFixed(2)} です。`
+        if (qualityAValue > qualityBValue) {
+            resultMessage = `Aの方がコスト効率が良いです。`
         } else if (qualityBValue > qualityAValue) {
-            resultMessage = `Bの方がコスト効率が良いです。Bの1個当たりの費用は ${costPerUnitB.toFixed(2)} です。`
+            resultMessage = `Bの方がコスト効率が良いです。`
         } else {
-            resultMessage = `A と B はどちらも費用対効果は同じです。Aの1個当たりの費用は ${costPerUnitA.toFixed(2)}、Bの1個当たりの費用は ${costPerUnitB.toFixed(2)} です。`
+            resultMessage = `A と B はどちらも費用対効果は同じです。`
         }
 
         setResult({
             cost: resultMessage,
             quality: {
-                A: qualityAValue.toFixed(2),
-                B: qualityBValue.toFixed(2),
+                A: {
+                    qualityValue: qualityAValue.toFixed(2),
+                    costPerUnit: costPerUnitA.toFixed(2)
+                },
+                B: {
+                    qualityValue: qualityBValue.toFixed(2),
+                    costPerUnit: costPerUnitB.toFixed(2)
+                },
             }
         })
     }

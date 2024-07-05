@@ -2,8 +2,14 @@ export default ({ result }: {
     result: {
         cost: string
         quality: {
-            A: string
-            B: string
+            A: {
+                qualityValue: string
+                costPerUnit: string
+            }
+            B: {
+                qualityValue: string
+                costPerUnit: string
+            }
         }
     }
 }) => {
@@ -15,8 +21,10 @@ export default ({ result }: {
                     <p>{result.cost}</p>
                     <div style={{ marginTop: '10px' }}>
                         <h4>品質評価</h4>
-                        <p><strong>1円あたりの価値 - A:</strong> {result.quality.A} 円</p>
-                        <p><strong>1円あたりの価値 - B:</strong> {result.quality.B} 円</p>
+                        <p><strong>1円あたりの価値 - A:</strong> {result.quality.A.qualityValue} </p>
+                        <p><strong>1個あたりの価値 - A:</strong> {result.quality.A.costPerUnit} 円</p>
+                        <p><strong>1円あたりの価値 - B:</strong> {result.quality.B.qualityValue} </p>
+                        <p><strong>1個あたりの価値 - A:</strong> {result.quality.B.costPerUnit} 円</p>
                     </div>
                 </div>
             )}

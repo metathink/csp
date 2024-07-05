@@ -24,6 +24,22 @@ export const initializeResult = () => {
     }
 }
 
+export const initializeMultiResult = () => {
+    return {
+        cost: "",
+        quality: {
+            A: {
+                qualityValue: "",
+                costPerUnit: ""
+            },
+            B: {
+                qualityValue: "",
+                costPerUnit: ""
+            },
+        },
+    }
+}
+
 
 export const initializeTab = () => {
     return "unit"
