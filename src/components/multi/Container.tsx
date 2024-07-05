@@ -25,7 +25,7 @@ export default () => {
             <Block name="b" value={val} onChange={handleChange} />
             <ResultButton val={val} setResult={setResult} />
             <Result result={result} />
-            <ResetButton />
+            <ResetButton setVal={setVal} setResult={setResult}/>
         </div>
     )
 }
