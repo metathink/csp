@@ -14,7 +14,6 @@ function App() {
       <Title />
       <SelectContainer tab={tab} setTab={setTab} />
       <MainContainer tab={tab} />
-      
     </div>
   )
 }

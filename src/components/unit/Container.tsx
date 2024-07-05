@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { initializeUnitResult, initializeUnitValues } from "../../util/initialStates"
+import { initializeResult, initializeUnitValues } from "../../util/initialStates"
 import replaceStr from "../../util/replaceStr"
 import Block from "./Block"
 import ResultButton from "../unit/ResultButton"
@@ -8,7 +8,7 @@ import ResetButton from "../unit/ResetButton"
 
 export default () => {
     const [val, setVal] = useState(initializeUnitValues)
-    const [result, setResult] = useState(initializeUnitResult)
+    const [result, setResult] = useState(initializeResult)
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target

@@ -17,18 +17,10 @@ export const initializeMultiValues = () => {
         b3Val: "0"
     }
 }
-export const initializeUnitResult = () => {
+export const initializeResult = () => {
     return {
         cost: "",
-        quality: { A: "", B: "" },
-    }
-}
-
-export const initializeMultiResult = () => {
-    return {
-        cost: "",
-        quality: { A: "", B: "" },
-
+        quality: { A: "", B: ""},
     }
 }
 

@@ -55,5 +55,9 @@ export default ({ val, setResult }: {
         })
     }
 
-    return <button onClick={onResult}> Result </button>
+    return (
+        <div>
+            <button onClick={onResult}> Result </button>
+        </div>
+    )
 }

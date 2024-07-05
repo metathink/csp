@@ -1,4 +1,4 @@
-import { initializeUnitResult, initializeUnitValues } from "../../util/initialStates"
+import { initializeResult, initializeUnitValues } from "../../util/initialStates"
 export default ({ setResult, setVal }: {
     setResult: React.Dispatch<React.SetStateAction<{
         cost: string
@@ -15,7 +15,7 @@ export default ({ setResult, setVal }: {
     }>>
 }) => {
     const onReset = () => {
-        setResult(initializeUnitResult)
+        setResult(initializeResult)
         setVal(initializeUnitValues)
     }
 
