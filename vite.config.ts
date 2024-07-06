@@ -11,11 +11,20 @@ export default defineConfig({
         enabled: true,
       },
       manifest: {
-        name: 'cospa',
+        name: 'Cospa',
         short_name: 'CSP',
         description: 'My Progressive Web App using Vite and React',
         theme_color: '#ffffff',
+        background_color: '#ffffff',
+        icons: [
+          {
+            src: '/CSP.png',
+            sizes: '192x192',
+            type: 'image/png'
+          }
+        ]
       },
+
     }),
   ],
 });
