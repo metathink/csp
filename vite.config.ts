@@ -21,7 +21,7 @@ export default defineConfig({
           {
             src: '/CSP.svg',
             sizes: '192x192',
-            type: 'image/png'
+            type: 'image/svg+xml'
           }
         ]
       },
