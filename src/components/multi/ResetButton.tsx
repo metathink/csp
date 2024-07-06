@@ -1,3 +1,4 @@
+import { Button } from "antd"
 import { initializeMultiResult, initializeMultiValues } from "../../util/initialStates"
 
 export default ({ setResult, setVal }: {
@@ -30,7 +31,7 @@ export default ({ setResult, setVal }: {
 
     return (
         <div>
-            <button onClick={onReset} > Reset </button>
+            <Button onClick={onReset} > Reset </Button>
         </div>
     )
 }

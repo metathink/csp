@@ -81,7 +81,7 @@ export default ({ val, setResult }: {
     }
 
     return (
-        <div>
+        <div style={{ margin: 12 }}>
             <Button onClick={onResult} > Result </Button>
         </div>
     )

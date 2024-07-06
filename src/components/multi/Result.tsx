@@ -1,3 +1,5 @@
+import { Card, Typography } from "antd"
+
 export default ({ result }: {
     result: {
         cost: string
@@ -13,20 +15,35 @@ export default ({ result }: {
         }
     }
 }) => {
+    const QualityText = () => {
+
+        if (result.quality.A.qualityValue.length > 0 &&
+            result.quality.A.costPerUnit.length > 0 &&
+            result.quality.B.qualityValue.length > 0 &&
+            result.quality.B.costPerUnit.length > 0
+        ) {
+            return (
+                <div style={{ marginTop: '10px' }}>
+                    <Typography.Title level={3}>品質評価</Typography.Title>
+                    <Typography.Text strong>1円あたりの価値 - A: {result.quality.A.qualityValue} </Typography.Text>
+                    <Typography.Text strong>1個あたりの価値 - A: {result.quality.A.costPerUnit} 円</Typography.Text>
+                    <Typography.Text strong>1円あたりの価値 - B: {result.quality.B.qualityValue} </Typography.Text>
+                    <Typography.Text strong>1個あたりの価値 - A: {result.quality.B.costPerUnit} 円</Typography.Text>
+                </div>
+            )
+        } else {
+            return (<></>)
+        }
+    }
+
     return (
         <>
-            {result.cost.length > 0 && (
-                <div style={{ padding: '20px', border: '1px solid #ddd', borderRadius: '5px', backgroundColor: '#f9f9f9' }}>
-                    <h3>費用対効果の結果</h3>
-                    <p>{result.cost}</p>
-                    <div style={{ marginTop: '10px' }}>
-                        <h4>品質評価</h4>
-                        <p><strong>1円あたりの価値 - A:</strong> {result.quality.A.qualityValue} </p>
-                        <p><strong>1個あたりの価値 - A:</strong> {result.quality.A.costPerUnit} 円</p>
-                        <p><strong>1円あたりの価値 - B:</strong> {result.quality.B.qualityValue} </p>
-                        <p><strong>1個あたりの価値 - A:</strong> {result.quality.B.costPerUnit} 円</p>
-                    </div>
-                </div>
+            {result.cost.length > 1 && (
+                <Card style={{ margin: 8, padding: '20px', border: '1px solid #ddd', borderRadius: '5px', backgroundColor: '#f9f9f9' }}>
+                    <Typography.Title level={3}> 結果 </Typography.Title>
+                    <Typography.Text strong>{result.cost}</Typography.Text>
+                    <QualityText />
+                </Card>
             )}
         </>
     )
