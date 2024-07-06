@@ -3,7 +3,7 @@ import MultiContainer from "./multi/Container"
 
 export default ({ tab }: { tab: string }) => {
     return (
-        <>
+        <div className="main-container" >
             {
                 tab === "unit" ? (
                     <UnitContainer />
@@ -11,6 +11,6 @@ export default ({ tab }: { tab: string }) => {
                     <MultiContainer />
                 )
             }
-        </>
+        </div>
     )
 }

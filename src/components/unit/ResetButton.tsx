@@ -1,3 +1,4 @@
+import { Button } from "antd"
 import { initializeResult, initializeUnitValues } from "../../util/initialStates"
 export default ({ setResult, setVal }: {
     setResult: React.Dispatch<React.SetStateAction<{
@@ -20,8 +21,8 @@ export default ({ setResult, setVal }: {
     }
 
     return (
-        <div>
-            <button onClick={onReset} > Reset </button>
+        <div style={{ margin: 4 }}>
+            <Button onClick={onReset} > Reset </Button>
         </div>
     )
 }

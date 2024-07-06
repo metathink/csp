@@ -1,7 +1,7 @@
+import { Typography } from 'antd';
+const { Title } = Typography
 export default () => {
     return (
-        <div className="title">
-            <div> コスパ計算 </div>
-        </div>
+        <Title> コスパ計算 </Title>
     )
 }

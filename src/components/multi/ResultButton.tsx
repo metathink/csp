@@ -1,3 +1,4 @@
+import { Button } from "antd"
 import Quality from "../../util/quality"
 
 export default ({ val, setResult }: {
@@ -81,7 +82,7 @@ export default ({ val, setResult }: {
 
     return (
         <div>
-            <button onClick={onResult} > Result </button>
+            <Button onClick={onResult} > Result </Button>
         </div>
     )
 }

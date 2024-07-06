@@ -20,7 +20,7 @@ export default () => {
     }
 
     return (
-        <div>
+        <div className="container">
             <Block name="a" value={val} onChange={handleChange} />
             <Block name="b" value={val} onChange={handleChange} />
             <ResultButton val={val} setResult={setResult} />

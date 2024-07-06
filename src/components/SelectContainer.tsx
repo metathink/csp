@@ -1,18 +1,19 @@
 import React from "react"
+import { Radio, RadioChangeEvent } from "antd"
 
 export default ({ tab, setTab }: { tab: string, setTab: React.Dispatch<React.SetStateAction<string>> }) => {
 
-    const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const handleChange = (e: RadioChangeEvent) => {
         setTab(e.target.value)
     }
 
     return (
         <>
             <div className="selectTab">
-                <select name="tabs" value={tab} onChange={handleChange}>
-                    <option value="unit"> 単価 </option>
-                    <option value="multi"> 複数 </option>
-                </select>
+                <Radio.Group name="tabs" value={tab} onChange={handleChange}>
+                    <Radio.Button value="unit"> 単価 </Radio.Button>
+                    <Radio.Button value="multi"> 複数 </Radio.Button>
+                </Radio.Group>
             </div>
         </>
     )
