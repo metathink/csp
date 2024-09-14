@@ -12,6 +12,7 @@ export default defineConfig({
         enabled: true,
       },
       manifest: {
+        start_url: "index.html",
         name: 'Cospa',
         short_name: 'CSP',
         display: 'standalone',
