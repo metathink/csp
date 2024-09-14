@@ -20,14 +20,14 @@ export default defineConfig({
         background_color: '#ffffff',
         icons: [
           {
-            src: '192x192-CSP.svg',
+            src: 'csp.png',
             sizes: '192x192',
-            type: 'image/svg+xml'
+            type: 'image/png'
           },
           {
-            src: "csp.svg",
+            src: "csp.png",
             sizes: "512x512",
-            type: "image/svg+xml"
+            type: "image/png"
           }
         ],
       },
