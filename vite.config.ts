@@ -8,11 +8,11 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       injectRegister: 'auto',
-      devOptions: {
-        enabled: true,
-      },
+      // devOptions: {
+      //   enabled: true,
+      // },
       manifest: {
-        start_url: "index.html",
+        start_url: "/",
         name: 'Cospa',
         short_name: 'CSP',
         display: 'standalone',
